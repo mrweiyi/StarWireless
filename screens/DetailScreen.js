@@ -4,6 +4,7 @@ import { Button } from 'react-native-elements';
 import { StackNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from './HomeScreen';
+import Communications from 'react-native-communications';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -18,14 +19,18 @@ class DetailScreen extends React.Component {
     return (
       
       <View style={styles.container}>
- 
+        <Text style={styles.introduceText}>
+          Start By Selecting Your Device That Needs Repairing 
+        </Text>
+
         <Button
 				  title= {'Submit'} 
-				  onPress={() => { navigate('Success'); }}
+				  onPress={() => {Communications.text('2134216770','SWY I Love U'); }}
 				  icon={{name: 'av-timer'}}
 				  buttonStyle={{height: 50, width: 250, backgroundColor: 'rgba(199, 43, 98, 1)', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
 				  textStyle={{fontWeight: 'bold'}}
 				/>	
+
 
 
         <Text>Open up App.js to start working on your app!</Text>
@@ -36,21 +41,21 @@ class DetailScreen extends React.Component {
   }
 }
 
-const WelcomeStack = StackNavigator({
-  Welcome: {
-    screen: HomeScreen,
-  },
-  Details: {
-    screen:DetailScreen,
-  }
-});
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginTop: 0,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+
+  introduceText: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    textAlign: 'center',
+
   },
 });
 

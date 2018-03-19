@@ -23,16 +23,25 @@ class HomeScreen extends React.Component {
         // @ts-ignore
         source={require('../resources/logo.jpg')}
       />
-
-      <Text>Cheapest iPhone, iPad, Samsung, Macbook</Text>
-      <Text>Computer Reapir in Los Angeles</Text>
+      <View style={styles.introduce}>
+        <Text style={styles.introduceText}>
+          Cheapest iPhone, iPad, Samsung, Macbook Computer 
+        </Text>
+        <Text style={styles.introduceText}>
+          Reapir in Los Angeles
+        </Text>
+      </View>
+      <View style={styles.introduce2}>
+        <Text style={{fontWeight: 'bold',}}>
+          Good news! We’ve saved 47360 devices across the US. We are here to save yours! 
+        </Text>
+      </View>
       
-
       <Button
         title= {'Repair My Device'} 
         onPress={() => { navigate('Detail'); }}
-        icon={{name: 'av-timer'}}
-        buttonStyle={{height: 50, width: 250, backgroundColor: 'rgba(199, 43, 98, 1)', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
+        icon={{name: 'build'}}
+        buttonStyle={{height: 70, width: 300, backgroundColor: 'rgba(199, 43, 98, 1)', borderWidth: 2, borderColor: 'white', borderRadius: 30}}
         textStyle={{fontWeight: 'bold'}}
       />	
 
@@ -59,8 +68,29 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flexDirection: 'column',
   },
+  introduce: {
+    flex: 0.35,
+    marginTop: SCREEN_HEIGHT*0.01,
+    
+
+  },
+  introduce2: {
+
+    marginTop: SCREEN_HEIGHT*0.15,
+    marginLeft: SCREEN_WIDTH*0.1,
+    marginRight:SCREEN_WIDTH*0.1,
+    marginBottom: SCREEN_HEIGHT*0.05,
+
+  },
+  introduceText: {
+    fontWeight: 'bold',
+    color:'#8b0000',
+    fontSize: 25,
+    textAlign: 'center',
+
+  },
   address :{
-    flex: 0.2,
+    
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
