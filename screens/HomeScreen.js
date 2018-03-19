@@ -24,6 +24,10 @@ class HomeScreen extends React.Component {
         source={require('../resources/logo.jpg')}
       />
 
+      <Text>Cheapest iPhone, iPad, Samsung, Macbook</Text>
+      <Text>Computer Reapir in Los Angeles</Text>
+      
+
       <Button
         title= {'Repair My Device'} 
         onPress={() => { navigate('Detail'); }}
@@ -32,10 +36,11 @@ class HomeScreen extends React.Component {
         textStyle={{fontWeight: 'bold'}}
       />	
 
-
-      <Text>Open up App.js to start working on your app!</Text>
-      <Text>Changes you make will automatically reload.</Text>
-      <Text>Shake your phone to open the developer menu.</Text>
+      <View style={styles.address}>
+        <Text>1208 Venice Blvd </Text>
+        <Text>Los Angeles,CA 90006</Text>
+        <Text>(323)303-3695</Text>
+      </View>
 
     </View>
 
@@ -52,7 +57,17 @@ const styles = StyleSheet.create({
     marginTop: 0,
     backgroundColor: '#fff',
     alignItems: 'center',
+    flexDirection: 'column',
   },
+  address :{
+    flex: 0.2,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: SCREEN_HEIGHT*0.2,
+    
+
+  }
 });
 
 
